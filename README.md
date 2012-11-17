@@ -87,4 +87,4 @@ output:
 
 ##Thanks
 
-Big Thank-You to ![Dom Briggs](http://cssdeck.com/user/hallodom) over at CSSDeck for his ![Pure CSS OSX Terminal](http://cssdeck.com/labs/pure-css-osx-terminal) work
+Big Thank-You to [Dom Briggs](http://cssdeck.com/user/hallodom) over at CSSDeck for his [Pure CSS OSX Terminal](http://cssdeck.com/labs/pure-css-osx-terminal) work
