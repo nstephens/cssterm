@@ -84,3 +84,7 @@ output:
 1. Add OSX-Terminal variant
 2. Look for better fonts
 3. Breakout jQuery to avoid collisions with existing implementation
+
+##Thanks
+
+Big Thank-You to ![Dom Briggs](http://cssdeck.com/user/hallodom) over at CSSDeck for his ![Pure CSS OSX Terminal](http://cssdeck.com/labs/pure-css-osx-terminal) work
