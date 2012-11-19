@@ -84,6 +84,7 @@ output:
 1. Add OSX-Terminal variant
 2. Look for better fonts
 3. Breakout jQuery to avoid collisions with existing implementation
+4. Implement style in larger sites to determine css inheritance problems that will skew cssterm
 
 ##Thanks
 
