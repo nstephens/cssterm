@@ -30,7 +30,6 @@ $(document).ready(function() {
 	// closes the html that has been inserted, ends the terminal display
 	var termBot = '\
 	</p> \
-		<div class="terminal-cursor"></div> \
 	</div> \
 </div> \
 ';

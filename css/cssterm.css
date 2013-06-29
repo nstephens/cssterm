@@ -83,6 +83,7 @@
   box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
   overflow: hidden;
 }
+
 #terminal-buttons:hover .glyph{
   opacity: 1;
   cursor:default;
@@ -146,7 +147,7 @@
   font-size:13px;
   float: left;
   width: 100%;
-  min-height:130px;
+  min-height:30px;
   background:#000000;
   padding:10px;
   line-height:1.5em;
@@ -173,7 +174,7 @@
   font-size:13px;
   float: left;
   width: 100%;
-  min-height:130px;
+  min-height:30px;
   background:#000;
   padding:10px;
   line-height:1.5em;
@@ -212,21 +213,4 @@
 @-moz-keyframes blink {
   0%   { background:rgba(99,222,0,100); }
   100% { background:rgba(99,222,0,0); }
-}
-
-.terminal-cursor {
-  background:#63de00;
-  display:inline-block;
-  width:11px;
-  height:19px;
-  margin-bottom:-3px;
-}
-
-#terminal-body:hover .terminal-cursor {
-  -webkit-animation-name: blink;
-  -webkit-animation-duration: 1.5s;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-name: blink;
-  -moz-animation-duration: 1.5s;
-  -moz-animation-iteration-count: infinite;
 }
