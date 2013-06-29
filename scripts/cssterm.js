@@ -14,22 +14,15 @@ $(document).ready(function(){
 	<div id="terminal-window"> \
  	<div id="terminal-toolbar"> \
 		<div class="terminal-top"> \
-				<div class="terminal-button-left terminal-menu"> \
-				<div class="terminal-menu-icon"> </div> \
+				<div class="terminal-menu"> \
 				</div> \
 			<div id="terminal-buttons"> \
 				<div class="terminal-button terminal-close"> \
 				<div class="terminal-close-icon">X</div> \
-				</div>				 \
-				<div class="terminal-button terminal-maximize"> \
-				<div class="terminal-maximize-icon"> </div> \
-				</div> \
-				<div class="terminal-button terminal-minimize"> \
-				<div class="terminal-minimize-icon">-</div> \
 				</div> \
 			</div> \
 			<div id="terminal-title"> \
-				Terminal - ~: root@localhost: ~ \
+				Terminal: ~ \
 			</div> \
 		</div> \
 	</div> \

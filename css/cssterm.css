@@ -1,6 +1,5 @@
 /*----FONTS----*/
-@import url(http://fonts.googleapis.com/css?family=Average+Sans);
-@import url(http://fonts.googleapis.com/css?family=Share+Tech);
+@import url(http://fonts.googleapis.com/css?family=Cantarell:700|Open+Sans:300&subset=cyrillic-ext);
 
 /*-TERMINAL ONE-LINER STYLE-*/
 #cssterm-oneliner{
@@ -86,19 +85,6 @@
     right:10px; 
 }
 
-.terminal-button-left{
-    float:left;
-    top: 4px;
-    left: 10px;
-    width:14px;
-    height:14px;
-    border-radius:14px;
-    -webkit-box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-    -moz-box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-    box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-    overflow: hidden;
-}
-
 .terminal-button{
     float:right;
     width:14px;
@@ -134,33 +120,13 @@
     background: 0px 0px -moz-radial-gradient(bottom, cover,  rgba(255,255,255,0.70) 0%, rgba(255,255,255,0) 80%); /* FF3.6+ */
    
 }
-.terminal-menu{
-    background: #2f2e2b; /* Old browsers */
-    margin:2px 0px;
-    position: relative;
-    right: 3px;
-}
-
-.terminal-menu-icon{
-    margin:4px 0px 0px 4px;
-    right: 0px;
-    position: relative;
-    width:6px;
-    height:6px;
-    border-radius:14px;
-    background: #222;
-    -webkit-box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-    -moz-box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-    box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-    overflow: hidden;
-}
 
 /*--CLOSE BUTTON--*/
 .terminal-close{
     background: #f41b16; /* Old browsers */
     margin:0px 0px;
     position: relative;
-    right: 3px;
+    right: 0px;
 }
 
 .terminal-close-icon{
@@ -168,44 +134,8 @@
     font-size: 8px;
     font-weight: bold;
     color: #333;
-    font-family: 'Average Sans', sans-serif;
+    font-family: 'Cantarell', sans-serif;
     margin: 2px 0 0 4px;
-}
-/*--MINIMIZE BUTTON--*/
-.terminal-minimize{
-    background: #7b7a73; /* Old browsers */
-    margin:0px 2px;
-    position: relative;
-    right: 3px;
-}
-
-.terminal-minimize-icon{
-    position: relative;
-    font-size: 10px;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Average Sans', sans-serif;
-    margin: 0px 0 0 5px;
-}
-
-/*--MAXIMIZE BUTTON--*/
-.terminal-maximize{
-    background: #7b7a73; /* Old browsers */
-    margin:0px 2px;
-    position: relative;
-    right: 5px; 
-}
-
-.terminal-maximize-icon{
-    position: relative;
-    font-size: 10px;
-    font-weight: bold;
-    color: #333;
-    font-family: 'Average Sans', sans-serif;
-    margin: 4px 0 0 4px;
-    border: solid #333 1px;
-    height: 4px;
-    width: 4px;
 }
 
 /*-----TITLE TEXT-----*/
@@ -214,8 +144,8 @@
     position: relative;
     top:6px;
     width:40%;
-    left: 35%;
-    font-family: "Share Tech", sans-serif; 
+    left: 40%;
+    font-family: 'Cantarell', sans-serif; 
     font-size: 14px; 
     font-weight: bold;
     color: #d5dfdf;
@@ -225,7 +155,7 @@
 
 /*--TERMINAL BODY--*/
 #terminal-body {
-    font-family: Andale Mono, monospace;  line-height: 1em;
+    font-family: monospace;  line-height: 1em;
     font-size:13px;
     float: left;
     width: 100%;
@@ -252,7 +182,7 @@
 }
 
 #terminal-body {
-    font-family: Andale Mono, monospace;  line-height: 1em;
+    font-family: monospace;  line-height: 1em;
     font-size:13px;
     float: left;
     width: 100%;
