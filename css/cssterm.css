@@ -10,7 +10,7 @@
   margin-right: auto;
   margin-bottom:4px;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
   /*-webkit-transition:all 0.5s;*/
   overflow: hidden;
@@ -29,7 +29,7 @@
   min-width: 500px;
   background: #fff;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
   /*-webkit-transition:all 0.5s;*/
   overflow: hidden;
@@ -54,16 +54,6 @@
   -moz-box-shadow:0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
   box-shadow:0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
 }
-#terminal-toolbar .top{
-  float: left;
-  width: 100%;
-  height: 23px;
-}
-#terminal-toolbar .bottom{
-  float: left;
-  width: 100%;
-  height: 30px;
-}
 
 /*--TERMINAL BUTTONS--*/
 #terminal-toolbar #terminal-buttons{
@@ -87,26 +77,6 @@
 #terminal-buttons:hover .glyph{
   opacity: 1;
   cursor:default;
-  
-}
-.terminal-button .terminal-shine{
-   width: 4px;
-   height:3px;
-   border-radius:10px;
-   /*background-image: -webkit-gradient(radial, center center, 0, center center, 3, from(rgba(255,255,255,1)), to(rgba(255,255,255,0)));*/
-   background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6+ */  
-   background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-   background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-   background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Opera 12+ */
-   background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* IE10+ */
-   background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C */
-   
-}
-.terminal-button .terminal-glow{
-  width:14px;
-  height:8px;
-  background-image: -webkit-gradient(radial, center bottom, 0, center center, 5, from(rgba(255,255,255,0.75)), to(rgba(255,255,255,0)));
-  background: 0px 0px -moz-radial-gradient(bottom, cover,  rgba(255,255,255,0.70) 0%, rgba(255,255,255,0) 80%); /* FF3.6+ */
 }
 
 /*--CLOSE BUTTON--*/
@@ -153,38 +123,8 @@
   line-height:1.5em;
 }
 
-.terminal-body{
-  width: 14px;
-  height: 10px;
-  border:1px solid #6e8ba1;
-  background: #b8cfe0; /* Old browsers */
-  background: -moz-linear-gradient(top,  #b8cfe0 0%, #86adc8 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b8cfe0), color-stop(100%,#86adc8)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  #b8cfe0 0%,#86adc8 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  #b8cfe0 0%,#86adc8 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  #b8cfe0 0%,#86adc8 100%); /* IE10+ */
-  background: linear-gradient(top,  #b8cfe0 0%,#86adc8 100%); /* W3C */  
-  z-index: -50;
-  -webkit-box-shadow:0px 1px 0px rgba(255,255,255,0.25) inset,0px 1px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow:0px 1px 0px rgba(255,255,255,0.25) inset,0px 1px 0px rgba(0,0,0,0.2);
-}
-
-#terminal-body {
-  font-family: monospace; line-height: 1em;
-  font-size:13px;
-  float: left;
-  width: 100%;
-  min-height:30px;
-  background:#000;
-  padding:10px;
-  line-height:1.5em;
-}
 
 #terminal-body p { color: grey!important; }
- 
-#terminal-body p::-webkit-selection  { background:#0b209e; }
-
-#terminal-body p::selection { background:#0b209e; }
 
 #terminal-body p::-moz-selection { background:#0b209e; }
 
