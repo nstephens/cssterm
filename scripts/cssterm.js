@@ -2,12 +2,10 @@ $(document).ready(function() {
   // these are the special characters the javascript will look for at the beginning of a line
   var rstr = /^#/gi;  // indicates a root prompt
   var ustr = /^\$/gi;  // indicates a user prompt
-  var cstr = /^!/gi;  // inidicates a commented line
   var sstr = /^>/gi;  // indicates standard output
 
   var rprompt = "[root@localhost]# ";  // will replace occurrences of rstr
   var uprompt = "[user@localhost]$ ";  // will replace occurrences of ustr
-  var comment = "<div class='terminal-comment'>";  // will replace occurrences of cstr
   var stdout = "&nbsp;&nbsp;";  // will replace occurrences of sstr
 
   // the html that will be inserted to replace the shortened code
@@ -53,10 +51,6 @@ $(document).ready(function() {
           // is string a comment (don't forget to close that div)
         } else if (this.charAt(0) == "$") {
           newString += this.replace(ustr, uprompt).concat("<br>\n");
-          // is string a comment (don't forget to close that div)
-        } else if (this.charAt(0) == "!") {
-          newString += "</p>" + this.replace(cstr, comment).concat("</div>\n<p>");
-          // must be stdout
         } else {
           newString += stdout + this + "<br>\n";
       }
