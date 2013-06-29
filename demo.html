@@ -69,6 +69,10 @@ sdb: Mode Sense: bf 00 10 08
 <strong>OUTPUT:</strong>
 
 <div class="cssterm">
+! info of using kernel
+$ uname -a
+Linux ThinkPad-X230.localdomain 3.9.6-301.fc19.x86_64 #1 SMP Mon Jun 17 14:26:26 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+
 ! find the secondary drive that you wish to create a new filesystem on
 # dmesg|grep sd
 SCSI device sdb: 143374650 512-byte hdwr sectors (73408 MB)
