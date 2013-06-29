@@ -107,14 +107,13 @@
   font-size: 14px;
   font-weight: bold;
   color: #d5dfdf;
- //   text-shadow: 0px 1px 0px rgba(255,255,255,0.5);
   line-height: 14px;
 }
 
 /*--TERMINAL BODY--*/
 #terminal-body {
   font-family: monospace; line-height: 1em;
-  font-size:13px;
+  font-size:11px;
   float: left;
   width: 100%;
   min-height:30px;
@@ -135,7 +134,6 @@
 #terminal-body p {
   margin-top:5px;
   margin-bottom:5px;
-  font-size:13px;
 }
 
 /*---BLINK EFFECT---*/
