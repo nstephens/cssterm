@@ -8,7 +8,7 @@ $(document).ready(function() {
   var rprompt = "[root@localhost]# ";  // will replace occurrences of rstr
   var uprompt = "[user@localhost]$ ";  // will replace occurrences of ustr
   var comment = "<div class='terminal-comment'>";  // will replace occurrences of cstr
-  var stdout = "&nbsp;&nbsp;&nbsp;";  // will replace occurrences of sstr
+  var stdout = "&nbsp;&nbsp;";  // will replace occurrences of sstr
 
   // the html that will be inserted to replace the shortened code
   // the terminal bar and body before the text is placed
