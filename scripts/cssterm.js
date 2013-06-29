@@ -1,12 +1,12 @@
 $(document).ready(function() {
   // these are the special characters the javascript will look for at the beginning of a line
   var rstr = /^#/gi;  // indicates a root prompt
-  var ustr = /^$/gi;  // indicates a user prompt
+  var ustr = /^\$/gi;  // indicates a user prompt
   var cstr = /^!/gi;  // inidicates a commented line
   var sstr = /^>/gi;  // indicates standard output
 
   var rprompt = "[root@localhost]# ";  // will replace occurrences of rstr
-  var uprompt = "[user@localhost]$";  // will replace occurrences of ustr
+  var uprompt = "[user@localhost]$ ";  // will replace occurrences of ustr
   var comment = "<div class='terminal-comment'>";  // will replace occurrences of cstr
   var stdout = "&nbsp;&nbsp;&nbsp;";  // will replace occurrences of sstr
 
