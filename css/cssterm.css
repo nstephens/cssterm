@@ -1,31 +1,13 @@
 /*----FONTS----*/
 @import url(http://fonts.googleapis.com/css?family=Cantarell:700|Open+Sans:300&subset=cyrillic-ext);
 
-/*-TERMINAL ONE-LINER STYLE-*/
-#cssterm-oneliner{
-  color: #63de00!important;
-  padding: 0 4px 0 4px;
-  margin-top:4px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom:4px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 0px 10px rgba(0,0,0,0.75);
-  /*-webkit-transition:all 0.5s;*/
-  overflow: hidden;
-  display: inline;
-  border:1px solid #6e8ba1;
-  background: #000 ;/* Old browsers */
-}
-
 /*--TERMINAL HOLDER--*/
 #terminal-window{
   width: 98%;
   margin-top:40px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom:40px;
+  margin-bottom: 40px;
   min-width: 500px;
   background: #fff;
   border-radius: 5px;
@@ -33,6 +15,8 @@
   -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.75);
   /*-webkit-transition:all 0.5s;*/
   overflow: hidden;
+  opacity: 0.8;
+  filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
 /*---TOP BAR---*/
@@ -40,7 +24,7 @@
   width: 100%;
   height: 25px;
   background: gray;
-  border-radius:5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
 
   background: #cfcfcf; /* Old browsers */
   background: -moz-linear-gradient(top,  #2f2e2b 0%, #3c3b37 100%); /* FF3.6+ */
@@ -50,39 +34,39 @@
   background: -ms-linear-gradient(top,  #2f2e2b 0%,#3c3b37 100%); /* IE10+ */
   background: linear-gradient(top,  #2f2e2b 0%,#3c3b37 100%); /* W3C */
   
-  -webkit-box-shadow:0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
-  -moz-box-shadow:0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
-  box-shadow:0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
+  -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
+  -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
+  box-shadow: 0px 1px 0px rgba(255,255,255,0.5) inset,0px 1px 0px #515151;
 }
 
 /*--TERMINAL BUTTONS--*/
 #terminal-toolbar #terminal-buttons{
   float: right;
-  position:relative;
-  top:4px;
-  right:10px;
+  position: relative;
+  top: 4px;
+  right: 10px;
 }
 
 .terminal-button{
-  float:right;
-  width:14px;
-  height:14px;
-  border-radius:14px;
-  -webkit-box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-  -moz-box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
-  box-shadow:0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
+  float: right;
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
+  -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
+  box-shadow: 0px 1px 0px rgba(255,255,255,0.5),0px 0px 3px #000 inset;
   overflow: hidden;
 }
 
 #terminal-buttons:hover .glyph{
   opacity: 1;
-  cursor:default;
+  cursor: default;
 }
 
 /*--CLOSE BUTTON--*/
 .terminal-close{
   background: #f41b16; /* Old browsers */
-  margin:0px 0px;
+  margin: 0px 0px;
   position: relative;
   right: 0px;
 }
@@ -100,8 +84,8 @@
 #terminal-title{
   float: left;
   position: relative;
-  top:6px;
-  width:40%;
+  top: 6px;
+  width: 40%;
   left: 40%;
   font-family: 'Cantarell', sans-serif;
   font-size: 14px;
@@ -113,27 +97,27 @@
 /*--TERMINAL BODY--*/
 #terminal-body {
   font-family: monospace; line-height: 1em;
-  font-size:11px;
+  font-size: 11px;
   float: left;
   width: 100%;
-  min-height:30px;
-  background:#000000;
-  padding:10px;
-  line-height:1.5em;
+  min-height: 30px;
+  background-color: #000;
+  padding: 10px;
+  line-height: 1.5em;
 }
 
 
-#terminal-body p { color: grey!important; }
+#terminal-body p { color: gray!important; }
 
-#terminal-body p::-moz-selection { background:#0b209e; }
+#terminal-body p::-moz-selection { background: #0b209e; }
 
 #terminal-body root { color: red!important; }
 
 #terminal-body user { color: lime!important; }
 
 #terminal-body p {
-  margin-top:5px;
-  margin-bottom:5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /*---BLINK EFFECT---*/
