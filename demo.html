@@ -47,18 +47,16 @@ Use the following HTML to draw a full terminal window, utilizing the options bel
 <textarea disabled="true" style="border: none;background-color:white;width:90%;height:240px;">
 <div class="cssterm">
 // -- lines that start with "#" will be treated as a root command
-// -- lines that start with "!" will be replaced as a comment
+// -- lines that start with "$" will be treated as a user command
 // -- include line breaks by placing a space (" ") on an empty line
 // -- everything else treated as standard output
 
 /* begin example */
-! find the secondary drive that you wish to create a new filesystem on
-# dmesg|grep sd
+# dmesg | grep sd
 SCSI device sdb: 143374650 512-byte hdwr sectors (73408 MB)
 sdb: Write Protect is off
 sdb: Mode Sense: bf 00 10 08
  
-! if you are certain this is the drive to use, begin the creation
 # mkfs.ext4 /dev/sdb1 
 /* end intentionally truncated example */
 </div>
@@ -69,17 +67,14 @@ sdb: Mode Sense: bf 00 10 08
 <strong>OUTPUT:</strong>
 
 <div class="cssterm">
-! info of using kernel
 $ uname -a
 Linux ThinkPad-X230.localdomain 3.9.6-301.fc19.x86_64 #1 SMP Mon Jun 17 14:26:26 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
 
-! find the secondary drive that you wish to create a new filesystem on
-# dmesg|grep sd
+# dmesg | grep sd
 SCSI device sdb: 143374650 512-byte hdwr sectors (73408 MB)
 sdb: Write Protect is off
 sdb: Mode Sense: bf 00 10 08
- 
-! if you are certain this is the drive to use, begin the creation
+
 # mkfs.ext4 /dev/sdb1 
 mke2fs 1.41.12 (17-May-2010)
 Filesystem label=

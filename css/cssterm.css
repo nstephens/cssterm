@@ -147,7 +147,7 @@
   float: left;
   width: 100%;
   min-height:130px;
-  background:#000;
+  background:#000000;
   padding:10px;
   line-height:1.5em;
 }
@@ -178,16 +178,18 @@
   padding:10px;
   line-height:1.5em;
 }
-#terminal-body p { 
-  color: #63de00!important;
-}
+
+#terminal-body p { color: grey!important; }
  
-#terminal-body p::-webkit-selection  {
-  background:#0b209e;
-}
+#terminal-body p::-webkit-selection  { background:#0b209e; }
+
 #terminal-body p::selection { background:#0b209e; }
 
 #terminal-body p::-moz-selection { background:#0b209e; }
+
+#terminal-body root { color: red!important; }
+
+#terminal-body user { color: lime!important; }
 
 #terminal-body p {
   margin-top:5px;
@@ -228,5 +230,3 @@
   -moz-animation-duration: 1.5s;
   -moz-animation-iteration-count: infinite;
 }
-
-
