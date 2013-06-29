@@ -6,7 +6,7 @@ $(document).ready(function() {
   var sstr = /^>/gi;  // indicates standard output
 
   var rprompt = "[root@localhost]# ";  // will replace occurrences of rstr
-  var upromt = "[user@localhost]$";  // will replace occurrences of ustr
+  var uprompt = "[user@localhost]$";  // will replace occurrences of ustr
   var comment = "<div class='terminal-comment'>";  // will replace occurrences of cstr
   var stdout = "&nbsp;&nbsp;&nbsp;";  // will replace occurrences of sstr
 
@@ -52,7 +52,7 @@ $(document).ready(function() {
           newString += this.replace(rstr, rprompt).concat("<br>\n");
           // is string a comment (don't forget to close that div)
         } else if (this.charAt(0) == "$") {
-          newString += this.replace(rstr, rprompt).concat("<br>\n");
+          newString += this.replace(ustr, uprompt).concat("<br>\n");
           // is string a comment (don't forget to close that div)
         } else if (this.charAt(0) == "!") {
           newString += "</p>" + this.replace(cstr, comment).concat("</div>\n<p>");
