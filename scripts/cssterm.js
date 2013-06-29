@@ -1,15 +1,17 @@
-$(document).ready(function(){
-	// these are the special characters the javascript will look for at the beginning of a line
-	var rstr = /^#/gi;	// indicates a root prompt
-	var cstr = /^!/gi;	// inidicates a commented line
-	var sstr = /^>/gi;	// indicates standard output
+$(document).ready(function() {
+  // these are the special characters the javascript will look for at the beginning of a line
+  var rstr = /^#/gi;  // indicates a root prompt
+  var ustr = /^$/gi;  // indicates a user prompt
+  var cstr = /^!/gi;  // inidicates a commented line
+  var sstr = /^>/gi;  // indicates standard output
 
-	var rprompt = "[root@localhost]# ";				// will replace occurrences of rstr
-	var comment = "<div class='terminal-comment'>";	// will replace occurrences of cstr
-	var stdout = "&nbsp;&nbsp;&nbsp;";				// will replace occurrences of sstr
+  var rprompt = "[root@localhost]# ";  // will replace occurrences of rstr
+  var upromt = "[user@localhost]$";  // will replace occurrences of ustr
+  var comment = "<div class='terminal-comment'>";  // will replace occurrences of cstr
+  var stdout = "&nbsp;&nbsp;&nbsp;";  // will replace occurrences of sstr
 
-	// the html that will be inserted to replace the shortened code
-	// the terminal bar and body before the text is placed
+  // the html that will be inserted to replace the shortened code
+  // the terminal bar and body before the text is placed
 	var termTop = '\
 	<div id="terminal-window"> \
  	<div id="terminal-toolbar"> \
@@ -37,27 +39,30 @@ $(document).ready(function(){
 </div> \
 ';
 
-	// tell jQuery to search for each instance of the shortened code
-	$(".cssterm").each(function(){
-	var myContent = $(this).text();
-	var arrayContent = myContent.split('\n');
-	var newString = "";
-	jQuery.each(arrayContent, function() {
-		// make sure there's text to avoid blank spaces
-		if (this.length != 0 ) {
-			// is string a root command
-			if (this.charAt(0) == "#") {
-				newString += this.replace(rstr, rprompt).concat("<br>\n");
-			// is string a comment (don't forget to close that div)
-			} else if (this.charAt(0) == "!") {
-				newString += "</p>" + this.replace(cstr, comment).concat("</div>\n<p>");
-			// must be stdout
-			} else {
-				newString += stdout + this + "<br>\n";
-			}
-		}
-	});
-	$(this).replaceWith( termTop + newString + termBot);
-	});
+  // tell jQuery to search for each instance of the shortened code
+  $(".cssterm").each(function() {
+    var myContent = $(this).text();
+    var arrayContent = myContent.split('\n');
+    var newString = "";
+    jQuery.each(arrayContent, function() {
+      // make sure there's text to avoid blank spaces
+      if (this.length != 0 ) {
+        // is string a root command
+        if (this.charAt(0) == "#") {
+          newString += this.replace(rstr, rprompt).concat("<br>\n");
+          // is string a comment (don't forget to close that div)
+        } else if (this.charAt(0) == "$") {
+          newString += this.replace(rstr, rprompt).concat("<br>\n");
+          // is string a comment (don't forget to close that div)
+        } else if (this.charAt(0) == "!") {
+          newString += "</p>" + this.replace(cstr, comment).concat("</div>\n<p>");
+          // must be stdout
+        } else {
+          newString += stdout + this + "<br>\n";
+      }
+    }
+  });
+  $(this).replaceWith( termTop + newString + termBot);
+  });
 });
 
