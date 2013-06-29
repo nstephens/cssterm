@@ -1,10 +1,12 @@
 $(document).ready(function() {
-  // these are the special characters the javascript will look for at the beginning of a line
-  var rstr = /^#/gi;  // indicates a root prompt
-  var ustr = /^\$/gi;  // indicates a user prompt
 
-  var rprompt = "<root>[root@localhost]# </root>";  // will replace occurrences of rstr
-  var uprompt = "<user>[user@localhost]$ </user>";  // will replace occurrences of ustr
+  function htmlEscape(str) {
+   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/ /g, '&nbsp');
+  }
+
+  function userReplace(str) {
+   return str.replace(/^#/gi, "<root>[root@localhost]# </root>").replace(/^\$/gi, "<user>[user@localhost]$ </user>");
+  }
 
   // the html that will be inserted to replace the shortened code
   // the terminal bar and body before the text is placed
@@ -43,16 +45,13 @@ $(document).ready(function() {
       // make sure there's text to avoid blank spaces
       if (this.length != 0) {
         // is string a root command
-        if (this.charAt(0) == "#") {
-          newString += this.replace(rstr, rprompt).concat("<br>\n");
-        } else if (this.charAt(0) == "$") {
-          newString += this.replace(ustr, uprompt).concat("<br>\n");
+        if (this.charAt(0) == "#" || this.charAt(0) == "$") {
+          newString += userReplace(this) + ("<br>\n");
         } else {
-          newString += this + "<br>\n";
+          newString += htmlEscape(this) + "<br>\n";
       }
     }
   });
-  $(this).replaceWith( termTop + newString + termBot);
+  $(this).replaceWith( termTop + newString + termBot );
   });
 });
-
