@@ -22,7 +22,7 @@ $(document).ready(function() {
 				</div> \
 			</div> \
 			<div id="terminal-title"> \
-				Terminal: ~ \
+				user@localhost:~ \
 			</div> \
 		</div> \
 	</div> \
