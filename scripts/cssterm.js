@@ -46,7 +46,7 @@ $(document).ready(function() {
       if (this.length != 0) {
         // is string a root command
         if (this.charAt(0) == "#" || this.charAt(0) == "$") {
-          newString += userReplace(this) + ("<br>\n");
+          newString += userReplace(this) + "<br>\n";
         } else {
           newString += htmlEscape(this) + "<br>\n";
       }
