@@ -7,7 +7,6 @@
     Place css and javascript files into your existing webpage, including a copy of jQuery
 
 ```html
-
 <head>
 <link rel="stylesheet" type="text/css" href="css/cssterm.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -21,13 +20,24 @@ Full Terminal Window html:
 
 ```html
 <div class="cssterm">
-! find the secondary drive that you wish to create a new filesystem on
-# dmesg|grep sd
-SCSI device sdb: 143374650 512-byte hdwr sectors (73408 MB)
-sdb: Write Protect is off
-sdb: Mode Sense: bf 00 10 08
- 
-! if you are certain this is the drive to use, begin the creation
+$ uname -a
+Linux ThinkPad-X230.localdomain 3.9.6-301.fc19.x86_64 #1 SMP Mon Jun 17 14:26:26 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+
+# dmesg | grep sd
+[135587.413741] sd 27:0:0:0: Attached scsi generic sg1 type 0
+[135587.416697] sd 27:0:0:0: [sdb] 2007040 512-byte logical blocks: (1.02 GB/980 MiB)
+[135587.418130] sd 27:0:0:0: [sdb] Write Protect is off
+[135587.418140] sd 27:0:0:0: [sdb] Mode Sense: 03 00 00 00
+[135587.418944] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.418947] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.423205] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.423211] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.424119]  sdb: sdb1 sdb2
+[135587.428088] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.428094] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.428098] sd 27:0:0:0: [sdb] Attached SCSI removable disk
+[135588.336077] SELinux: initialized (dev sdb1, type iso9660), uses genfs_contexts
+
 # mkfs.ext4 /dev/sdb1 
 mke2fs 1.41.12 (17-May-2010)
 Filesystem label=
@@ -51,24 +61,13 @@ Writing superblocks and filesystem accounting information: done
  
 This filesystem will be automatically checked every 20 mounts or
 180 days, whichever comes first.  Use tune2fs -c or -i to override.
-
 </div>
 
 ```
 
 output:
 
-  ![](http://manipulate.org/downloads/cssterm/demos/cssterm-full-terminal.png)
-
-Simple one-liner command html:
-
-```html
-<div id="cssterm-oneliner">Text to be replaced as a command</div>
-```
-
-output:
-
-  ![](http://manipulate.org/downloads/cssterm/demos/cssterm-one-liner.png)
+  ![](https://raw.github.com/ignatenkobrain/cssterm/master/demo.png)
 
 ## Substitution
 
@@ -81,11 +80,10 @@ output:
 
 ##ToDo
 
-1. Add OSX-Terminal variant
-2. Look for better fonts
-3. Breakout jQuery to avoid collisions with existing implementation
-4. Implement style in larger sites to determine css inheritance problems that will skew cssterm
+1. Testing.. Testing.. Testing..
 
 ##Thanks
 
 Big Thank-You to [Dom Briggs](http://cssdeck.com/user/hallodom) over at CSSDeck for his [Pure CSS OSX Terminal](http://cssdeck.com/labs/pure-css-osx-terminal) work
+
+Big Thank-You to [Nick Stephens](https://github.com/nstephens) for his [CSSTerm](https://github.com/nstephens/cssterm) work

@@ -1,8 +1,10 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="css/cssterm.css">
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="scripts/cssterm.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/cssterm.css">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- detect browser for best performance in js-->
+  <script src="http://jquery.thewikies.com/browser/jquery.browser.js"></script>
+  <script src="scripts/cssterm.js"></script>
 </head>
 <body>
 
@@ -11,54 +13,47 @@ Include the jquery library, the cssterm css, and cssterm javascript into your ex
 
 <br><br>
 
-<textarea disabled="true" style="border: none;background-color:white;width:90%;height:80px;">
+<textarea disabled="true" style="border: none;background-color: white;width: 90%;height: 80px;">
 <head>
-	<link rel="stylesheet" type="text/css" href="css/cssterm.css">
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="scripts/cssterm.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/cssterm.css">
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <!-- detect browser for best performance in js-->
+  <script src="http://jquery.thewikies.com/browser/jquery.browser.js"></script>
+  <script src="scripts/cssterm.js"></script>
 </head>
 </textarea>
 
-<h1>CSSTerm Examples</h1>
+<h1>CSSTerm Example</h1>
 
-<h2>One liners that don't require a full terminal</h3>
-Use the following HTML anywhere on the page to highlight a command without drawing a full terminal
-
-<br><br>
-
-<textarea disabled="true" style="border: none;background-color:white;width:90%;height:20px;">
-<div id="cssterm-oneliner">Text to be replaced as a command</div>
-</textarea>
-
-<br><br>
-
-<strong>OUTPUT:</strong>
-
-<br><br>
-
-It should be noted that the stock 2.6.26 ext4 has problems with delayed allocation and with filesystems with non-extent based files. So until Debian starts shipping a 2.6.27 based kernel or a 2.6.26 kernel with at least the 2.6.26-ext4-7 patchset, you should mount ext4dev filesystems using -o nodelalloc and only use freshly created filesystems using <div id="cssterm-oneliner">mke2fs -t ext4dev</div>. (Without these fixes, if you try to use an ext3 filesystem which was converted using <div id="cssterm-oneliner">tune2fs -E test_fs -o extents /dev/DEV</div>, you will probably hit a kernel BUG the moment you try to delete or truncate an old non-extent based file.)
-
-<h2>More complex examples that display a full terminal window</h3>
+<h2>Full terminal window</h2>
 
 Use the following HTML to draw a full terminal window, utilizing the options below:
 
 <br><br>
 
-<textarea disabled="true" style="border: none;background-color:white;width:90%;height:240px;">
+<textarea disabled="true" style="border: none;background-color: white;width: 100%;height: 300px;">
 <div class="cssterm">
 // -- lines that start with "#" will be treated as a root command
-// -- lines that start with "!" will be replaced as a comment
+// -- lines that start with "$" will be treated as a user command
 // -- include line breaks by placing a space (" ") on an empty line
 // -- everything else treated as standard output
 
 /* begin example */
-! find the secondary drive that you wish to create a new filesystem on
-# dmesg|grep sd
-SCSI device sdb: 143374650 512-byte hdwr sectors (73408 MB)
-sdb: Write Protect is off
-sdb: Mode Sense: bf 00 10 08
+# dmesg | grep sd
+[135587.413741] sd 27:0:0:0: Attached scsi generic sg1 type 0
+[135587.416697] sd 27:0:0:0: [sdb] 2007040 512-byte logical blocks: (1.02 GB/980 MiB)
+[135587.418130] sd 27:0:0:0: [sdb] Write Protect is off
+[135587.418140] sd 27:0:0:0: [sdb] Mode Sense: 03 00 00 00
+[135587.418944] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.418947] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.423205] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.423211] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.424119]  sdb: sdb1 sdb2
+[135587.428088] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.428094] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.428098] sd 27:0:0:0: [sdb] Attached SCSI removable disk
+[135588.336077] SELinux: initialized (dev sdb1, type iso9660), uses genfs_contexts
  
-! if you are certain this is the drive to use, begin the creation
 # mkfs.ext4 /dev/sdb1 
 /* end intentionally truncated example */
 </div>
@@ -69,13 +64,24 @@ sdb: Mode Sense: bf 00 10 08
 <strong>OUTPUT:</strong>
 
 <div class="cssterm">
-! find the secondary drive that you wish to create a new filesystem on
-# dmesg|grep sd
-SCSI device sdb: 143374650 512-byte hdwr sectors (73408 MB)
-sdb: Write Protect is off
-sdb: Mode Sense: bf 00 10 08
- 
-! if you are certain this is the drive to use, begin the creation
+$ uname -a
+Linux ThinkPad-X230.localdomain 3.9.6-301.fc19.x86_64 #1 SMP Mon Jun 17 14:26:26 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+
+# dmesg | grep sd
+[135587.413741] sd 27:0:0:0: Attached scsi generic sg1 type 0
+[135587.416697] sd 27:0:0:0: [sdb] 2007040 512-byte logical blocks: (1.02 GB/980 MiB)
+[135587.418130] sd 27:0:0:0: [sdb] Write Protect is off
+[135587.418140] sd 27:0:0:0: [sdb] Mode Sense: 03 00 00 00
+[135587.418944] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.418947] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.423205] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.423211] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.424119]  sdb: sdb1 sdb2
+[135587.428088] sd 27:0:0:0: [sdb] No Caching mode page present
+[135587.428094] sd 27:0:0:0: [sdb] Assuming drive cache: write through
+[135587.428098] sd 27:0:0:0: [sdb] Attached SCSI removable disk
+[135588.336077] SELinux: initialized (dev sdb1, type iso9660), uses genfs_contexts
+
 # mkfs.ext4 /dev/sdb1 
 mke2fs 1.41.12 (17-May-2010)
 Filesystem label=
@@ -99,7 +105,6 @@ Writing superblocks and filesystem accounting information: done
  
 This filesystem will be automatically checked every 20 mounts or
 180 days, whichever comes first.  Use tune2fs -c or -i to override.
-
 </div>
 
 </body>
