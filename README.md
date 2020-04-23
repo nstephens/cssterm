@@ -9,7 +9,7 @@
 ```html
 <head>
 <link rel="stylesheet" type="text/css" href="css/cssterm.css">
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://code.jquery.com/jquery-1.3.2.min.js"></script>
 <script src="scripts/cssterm.js"></script>
 </head>
 ```
